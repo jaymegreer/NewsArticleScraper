@@ -29,9 +29,9 @@ This Python program is designed to scrap news articles and summarize them from a
     conda env create -f requirement.yaml
     ```
     ```
-    conda clean -p
+    conda clean -p
     ```
-        - This will create a new environment and install all the dependencies needed to run the code and then clean up the cache
+    - This will create a new environment and install all the dependencies needed to run the code and then clean up the cache
     - Double check that the environment includes `requests`, `beautifulsoup4`, `html2text`, and `google.generativeai` by typing the command ```
     conda list
     ```
