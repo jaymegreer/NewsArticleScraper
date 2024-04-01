@@ -14,7 +14,6 @@ the new code can be tested independently from what is working. This also makes t
 new features can be added and the working code remains stable, so adding new stuff is easier meaning this program's scalability is maintainable
 """
 
-
 import os   #allows code to interact with os (used to make directories)
 from module_1.scraper import Scraper, ContentExtractor
 from module_2.file_manager import FileManager, FileSaver
@@ -34,7 +33,7 @@ def main():
 
     #Load API key for Gemini
     api_key = 'AIzaSyDjYqjoFTUAH9uGznSeWWU-DAP0Wu5qeDI' #load your own API key 
-    connect_to_gemini_api(api_key)
+    connect_to_gemini_api(api_key) #configure gemini based on given key
     
     #create instances of FileManager class and the Scraper class in order to use its methods
     file_manager = FileManager(raw_folder)
@@ -46,9 +45,9 @@ def main():
         article_content, article_title = scraper.extract_content(url) #extract the article content and title
 
         if article_content: #check if the article content was correctly extracted
-            prompt = "Please make the article concise, up to 50 words, the article is: "
-            concise_article = send_prompt_to_llm(prompt, article_content)
-            output_article = f"Title: {article_title}\n\nSummary: \n{concise_article}\n\nFull Article: \n{article_content}"
+            prompt = "Please make the article concise, up to 50 words, the article is: " #prompt for ai to generate summary
+            concise_article = send_prompt_to_llm(prompt, article_content) #call function to get summary/concise article
+            output_article = f"Title: {article_title}\n\nSummary: \n{concise_article}\n\nFull Article: \n{article_content}" #layout of how i want the output to be
             output_filename = f'{processed_folder}/{article_title}.txt' #filename based on article name
             file_manager.save_to_file(output_filename, output_article) #save scraped articles to new text file
         else: #print error message
