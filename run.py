@@ -32,7 +32,7 @@ def main():
         urls = file.read().splitlines() #read urls from the txt file and store them in a list
 
     #Load API key for Gemini
-    api_key = 'AIzaSyDjYqjoFTUAH9uGznSeWWU-DAP0Wu5qeDI' #load your own API key 
+    api_key = 'ADD YOUR OWN KEY' #load your own API key 
     connect_to_gemini_api(api_key) #configure gemini based on given key
     
     #create instances of FileManager class and the Scraper class in order to use its methods
