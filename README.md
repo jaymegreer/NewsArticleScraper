@@ -40,12 +40,11 @@ This Python program is designed to scrap news articles and summarize them from a
 4. If in **Visual Studio Code**, press the play button while in `run.py`
 5. If in the **terminal**, type 
     ```
-    python3 articleScraper.py
+    python3 run.py
     ```
-    
 6. **Check the Output** 
     - Watch the processed and raw folders in the Data folder fill with the articles
-        - Each text file should contain the title of the article, the summary of the artcile in 50 words or less, and the full article text
+        - Each text file should contain the title of the article, the summary of the article in 50 words or less, and the full article text
 
 ## Using the API
 1. **Obtain the API Key**
