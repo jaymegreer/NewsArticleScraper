@@ -57,8 +57,8 @@ This Python program is designed to scrap news articles and summarize them from a
     - Click on the desired API Key and copy it
 2. **Add the Key to the Code**
     - Paste the key to line 35 in `run.py` where it says `#load your own API key` to initialize the variable `api_key` to your key
-        - This is then used in the function `connect_to_gemini_api`, which is definied in `AI_summarizer.py`
-        - This connects to the Gemini service using the specific API key which allows the ai to be used 
+        - This is then used in the function `connect_to_gemini_api`, which is defined in `AI_summarizer.py`
+        - This connects to the Gemini service using the specific API key, allowing the ai to be used 
 3. **Run the Code as Stated Previously**
 
 ## Notes
