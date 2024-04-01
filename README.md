@@ -49,12 +49,16 @@ This Python program is designed to scrap news articles and summarize them from a
 
 ## Using the API
 1. **Obtain the API Key**
-    - Sign uo for an account on the [Gemini API](https://ai.google.dev) website 
-    - Click "Get API Key" to generate the key
-    - Copy the given key
+    - Sign up for an account on the [Gemini API](https://ai.google.dev) website using your Google account by clicking the sign in button the top right corner of the screen
+    - Click the "Get API Key in Google AI Studio" button
+    - Click the "Get API Key" button on the left side panel of the screen
+    - Click the "Generate API Key" button to generate a new API key
+        - note: You may need to refresh your page to see the key if it doesn't pop up
+    - Click on the desired API Key and copy it
 2. **Add the Key to the Code**
-    - Paste the key to line 35 in `run.py` where it says `#load your own API key`
-        - This will configure Gemini to your own API
+    - Paste the key to line 35 in `run.py` where it says `#load your own API key` to initialize the variable `api_key` to your key
+        - This is then used in the function `connect_to_gemini_api`, which is definied in `AI_summarizer.py`
+        - This connects to the Gemini service using the specific API key which allows the ai to be used 
 3. **Run the Code as Stated Previously**
 
 ## Notes
