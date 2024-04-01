@@ -27,6 +27,8 @@ This Python program is designed to scrap news articles and summarize them from a
     - to create a copy of the environment needed type the following code into your command line
     ```
     conda env create -f requirement.yaml
+    ```
+    ```
     conda clean -p
     ```
         - This will create a new environment and install all the dependencies needed to run the code and then clean up the cache
@@ -46,7 +48,7 @@ This Python program is designed to scrap news articles and summarize them from a
 
 ## Using the API
 1. **Obtain the API Key**
-    - Sign uo for an account on the Gemini API website [Google](https://ai.google.dev)
+    - Sign uo for an account on the [Gemini API](https://ai.google.dev) website 
     - Click "Get API Key" to generate the key
     - Copy the given key
 2. **Add the Key to the Code**
@@ -55,7 +57,7 @@ This Python program is designed to scrap news articles and summarize them from a
 3. **Run the Code as Stated Previously**
 
 ## Notes
-**Changing URLs in `websiteURLs.txt`** 
-    - Copy and paste the entire URL in the text file with only one URL per line
-    - Make sure the URLs are valid and accessible
-    - Gemini has safety features and may be bounded by the article content. If the article is too violent, inapropriate, etc., that article will not work and a bound error will occur. 
+**Changing URLs in `websiteURLs.txt`**
+- Copy and paste the entire URL in the text file with only one URL per line
+- Make sure the URLs are valid and accessible
+- Gemini has safety features and may be bounded by the article content. If the article is too violent, inapropriate, etc., that article will not work and a bound error will occur. 
