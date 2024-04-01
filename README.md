@@ -14,13 +14,13 @@ This Python program is designed to scrap news articles and summarize them from a
 ## How to Use the Program
 1. **Clone the Respository**
     - you should have:
-        - websiteURLs.txt: contains ten URLs to different articles each in a new line
-        - requirement.yaml: holds the conda environment requirements to run this prgram
-        - run.py: main function that runs the program
-        - Data: holds the raw html articles and the processed articles 
-        - module_1: holds the scraper.py file, which is what extracts the content of the articles
-        - module_2: holds the file_manager.py file, which is what saves the articles into the Data folder
-        - module_3: holds the AI_summarizer.py, which implements the ai
+        - `websiteURLs.txt`: contains ten URLs to different articles each in a new line
+        - `requirement.yaml`: holds the conda environment requirements to run this prgram
+        - `run.py`: main function that runs the program
+        - `Data`: holds the raw html articles and the processed articles 
+        - `module_1`: holds the scraper.py file, which is what extracts the content of the articles
+        - `module_2`: holds the file_manager.py file, which is what saves the articles into the Data folder
+        - `module_3`: holds the AI_summarizer.py, which implements the ai
     - make sure you are working in the correct directory
 2. **Copy the Conda Environment**
     - make sure you have Python 3 installed on your system
