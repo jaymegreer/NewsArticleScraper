@@ -23,16 +23,18 @@ def main():
     #define paths for the data folders
     raw_folder = "data/raw"
     processed_folder = "data/processed"
+    summarized_folder = "data/summarized"
 
     #create the folders if they dont exist
     os.makedirs(raw_folder, exist_ok=True)
     os.makedirs(processed_folder, exist_ok=True)
+    os.makedirs(summarized_folder, exist_ok=True)
 
     with open('websiteURLs.txt', 'r') as file: #open the file that contains the urls
         urls = file.read().splitlines() #read urls from the txt file and store them in a list
 
     #Load API key for Gemini
-    api_key = 'ADD YOUR OWN KEY' #load your own API key 
+    api_key = 'ADD YOUR OWN API' #load your own API key 
     connect_to_gemini_api(api_key) #configure gemini based on given key
     
     #create instances of FileManager class and the Scraper class in order to use its methods
@@ -45,11 +47,19 @@ def main():
         article_content, article_title = scraper.extract_content(url) #extract the article content and title
 
         if article_content: #check if the article content was correctly extracted
+            #save scraped articles
+            output_article = f"Title: {article_title}\n\nFull Article: \n{article_content}" #layout of how i want the output to be for normal article
+            output_filename = f'{processed_folder}/{article_title}.txt' #filename based on article name for regular article
+            file_manager.save_to_file(output_filename, output_article) #save scraped articles to new text file
+
+            #save summarized articles
             prompt = "Please make the article concise, up to 50 words, the article is: " #prompt for ai to generate summary
             concise_article = send_prompt_to_llm(prompt, article_content) #call function to get summary/concise article
-            output_article = f"Title: {article_title}\n\nSummary: \n{concise_article}\n\nFull Article: \n{article_content}" #layout of how i want the output to be
-            output_filename = f'{processed_folder}/{article_title}.txt' #filename based on article name
-            file_manager.save_to_file(output_filename, output_article) #save scraped articles to new text file
+
+            output_summary = f"{article_title}\n\n{concise_article}" #layout of how i want the output to be for summary
+            output_summary_filename = f'{summarized_folder}/{article_title}.txt' #filename based on article name for summary
+            file_manager.save_to_file(output_summary_filename, output_summary) #save summarized articles to new text file
+
         else: #print error message
             print(f'Failed to extract content for article {i}') #error
 
